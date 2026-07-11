@@ -2,20 +2,24 @@ import pandas as pd
 import logging
 import sys
 import argparse
+import os
 
 biz_key=['客戶ID', '交易日期_clean', '交易金額_clean', '交易類型_clean', '分行代碼']
 
+os.makedirs('logs', exist_ok=True)
+os.makedirs('output', exist_ok=True)
+
 def parse_args():
     parser = argparse.ArgumentParser(description='清洗交易資料並驗證輸出') #description:做說明，只在跑--help時出現
-    parser.add_argument('--input', default='transactions.csv', help='輸入檔路徑') #default:使用者沒提供這個選項時的替補值
-    parser.add_argument('--output', default='transactions_clean.csv', help='輸出檔路徑')
+    parser.add_argument('--input', default='data/transactions.csv', help='輸入檔路徑') #default:使用者沒提供這個選項時的替補值
+    parser.add_argument('--output', default='output/transactions_clean.csv', help='輸出檔路徑')
     return parser.parse_args()
 
 logging.basicConfig(
     level=logging.INFO,  #低於此等級的忽略
     format='%(asctime)s [%(levelname)s] %(message)s', # %(asctime)s→事件發生時間、%(levelname)s→此訊等級名、 %(message)s→呼叫時回傳的話
     handlers=[  #訊息的出口清單
-        logging.FileHandler('clean_transactions.log', encoding='utf-8'),  #寫進檔案
+        logging.FileHandler('logs/pipeline.log', encoding='utf-8'),  #寫進檔案
         logging.StreamHandler()  #印到螢幕(終端機)
     ]
 )

@@ -1,4 +1,4 @@
-*.log
-transactions_clean.csv
+logs/
+output/
 .ipynb_checkpoints/
 .DS_Store

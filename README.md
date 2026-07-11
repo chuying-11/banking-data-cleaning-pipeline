@@ -22,10 +22,15 @@
 - **金額驗證：** 採獨立雙路徑對帳，清洗管線與驗證路徑使用不同邏輯計算總額，兩者一致才視為通過。
 
 ## 執行方式
-###### bash
-##### pip install pandas
-##### python clean_transactions.py   #使用預設路徑
-##### python clean_transactions.py --input transactions_0711.csv --output clean_0711.csv   #指定輸入輸出
+```bash
+pip install pandas
+
+#使用預設路徑
+python clean_transactions.py
+
+#指定輸入輸出
+python clean_transactions.py --input transactions_0711.csv --output clean_0711.csv
+```  
 
 ## 檔案說明
 | 檔案 | 角色 |

@@ -65,7 +65,7 @@ banking-data-cleaning/
 │   ├── transactions.csv           # 合成銀行交易資料
 │   └── customers.csv              # 合成客戶主檔
 ├── output/
-│   └── transactionsclean.csv      # 清理後輸出資料（執行後產生）
+│   └── transactions_clean.csv     # 清理後輸出資料（執行後產生）
 ├── logs/
 │   └── pipeline.log               # 執行日誌（執行後產生）
 └── README.md
